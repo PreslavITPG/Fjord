@@ -9,19 +9,24 @@ namespace WinFormsApp1
     public partial class Form1 : Form
     {
 
+
         private string connectionString = "server=localhost;user id=guitar_app;password=5;database=guitar_learning;";
         public Form1()
         {
             InitializeComponent();
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            ThemeManager.ApplyDarkTheme(this);
+        }
         // Login button click event
         private void button1_Click(object sender, EventArgs e)
         {
             string username = textBox1.Text.Trim();
             string password = textBox2.Text.Trim();
 
-            
+
 
             if (CheckLogin(username, password))
             {
@@ -84,6 +89,8 @@ namespace WinFormsApp1
                 return builder.ToString();
             }
         }
+
+        
 
 
         // Other existing methods (like textbox events) can remain below...

@@ -37,6 +37,7 @@
             ClientSize = new Size(800, 450);
             Name = "TabViewerForm";
             Text = "TabViewerForm";
+            Load += TabViewerForm_Load;
             ResumeLayout(false);
         }
 

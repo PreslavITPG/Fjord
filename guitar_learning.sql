@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Хост: localhost:3306
--- Време на генериране:  8 май 2025 в 08:29
--- Версия на сървъра: 10.4.32-MariaDB
--- Версия на PHP: 8.0.30
+-- Host: 127.0.0.1
+-- Generation Time: May 13, 2025 at 12:38 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,16 +18,39 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- База данни: `guitar_learning`
+-- Database: `guitar_learning`
 --
 
 -- --------------------------------------------------------
 
 --
--- Структура на таблица `users`
+-- Table structure for table `lessons`
 --
 
-DROP TABLE IF EXISTS `users`;
+CREATE TABLE `lessons` (
+  `id` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `filepath` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tabs`
+--
+
+CREATE TABLE `tabs` (
+  `id` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `filepath` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
 CREATE TABLE `users` (
   `UserID` int(11) NOT NULL,
   `Username` varchar(50) NOT NULL,
@@ -35,7 +58,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Схема на данните от таблица `users`
+-- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`UserID`, `Username`, `Password`) VALUES
@@ -47,7 +70,19 @@ INSERT INTO `users` (`UserID`, `Username`, `Password`) VALUES
 --
 
 --
--- Индекси за таблица `users`
+-- Indexes for table `lessons`
+--
+ALTER TABLE `lessons`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tabs`
+--
+ALTER TABLE `tabs`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`UserID`),
@@ -56,6 +91,18 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `lessons`
+--
+ALTER TABLE `lessons`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tabs`
+--
+ALTER TABLE `tabs`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users`

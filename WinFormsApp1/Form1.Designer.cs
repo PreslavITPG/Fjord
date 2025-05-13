@@ -41,7 +41,6 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(100, 23);
             textBox1.TabIndex = 0;
-            
             // 
             // textBox2
             // 
@@ -49,7 +48,6 @@
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(100, 23);
             textBox2.TabIndex = 1;
-           
             // 
             // label1
             // 
@@ -59,7 +57,6 @@
             label1.Size = new Size(30, 15);
             label1.TabIndex = 2;
             label1.Text = "User";
-            
             // 
             // label2
             // 
@@ -92,6 +89,7 @@
             Controls.Add(textBox1);
             Name = "Form1";
             Text = "Form1";
+            Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -103,5 +101,6 @@
         private Label label1;
         private Label label2;
         private Button button1;
+            
     }
 }

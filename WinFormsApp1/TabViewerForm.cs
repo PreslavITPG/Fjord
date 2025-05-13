@@ -27,5 +27,10 @@ namespace WinFormsApp1
             this.Controls.Add(txtTab);
             this.Size = new System.Drawing.Size(600, 400);
         }
+
+        private void TabViewerForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
